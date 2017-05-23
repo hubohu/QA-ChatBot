@@ -1,0 +1,14 @@
+---
+declared-services:
+  visual-recognition-service:
+    label: watson_vision_combined
+    plan: free
+applications:
+- name: antifake
+  path: .
+  command: npm start
+  memory: 512M
+  services:
+  - VR-Goods-Anti-Fake
+  env:
+    NODE_ENV: production

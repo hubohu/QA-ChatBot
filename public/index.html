@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Anti Fake</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="shortcut icon" href="imgs/favicon.ico" />
+    <script src="js/vendors/Chart.bundle.js"></script>
+    <script src="js/vendors/jquery.js"></script>
+    <script src="js/jquery.ajax.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+
+  <body>
+
+    <div class="header">Anti Fake Solution Watson<span><span></div>
+
+    <div class="model-select">
+      <div>
+          <label>Product S/N</label>
+          <input id="model" type="text" value="TEST001" placeholder="ONLY 'TEST001' availibale at this time" required>
+          <button class="button" onclick="startCompare();">Start Compare</button>
+          <button class="button" onclick="clearAllImgs();">Clear All Imgs</button>
+          <!--<button class="button" onclick="loadTestImgs();">Load Test Imgs</button>-->
+      </div>
+    </div>
+
+    <form id="upload-imgs" method="post" action="#" enctype="multipart/form-data">
+      <div class="holder">
+        <div class="image-upload">
+          <!--Drop front view here-->
+            <div class="drop_zone" id="front_view">
+              <label for="front_view_input">
+                <img id="front_view_img" src="#" alt="front view" />
+              </label>
+              <input id="front_view_input" type="file" name="photos[]" multiple="multiple" />
+            </div>
+
+            <div class="drop_zone" id="left_view">
+              <label for="left_view_input">
+                <img id="left_view_img" src="#" alt="left view" />
+              </label>
+              <input id="left_view_input" type="file" name="photos[]" multiple="multiple" />
+            </div>
+
+            <div class="drop_zone" id="bird_eye_view">
+              <label for="bird_eye_view_input">
+                <img id="bird_eye_view_img" src="#" alt="bird eye view" />
+              </label>
+              <input id="bird_eye_view_input" type="file" name="photos[]" multiple="multiple" />
+            </div>
+
+            <div class="drop_zone" id="bottom_side">
+              <label for="bottom_side_input">
+                <img id="bottom_side_img" src="#" alt="bottom side" />
+              </label>
+              <input id="bottom_side_input" type="file" name="photos[]" multiple="multiple" />
+            </div>
+
+            <div class="drop_zone" id="product_label">
+              <label for="product_label_input">
+                <img id="product_label_img" src="#" alt="product label" />
+              </label>
+              <input id="product_label_input" type="file" name="photos[]" multiple="multiple" />
+            </div>
+        </div>
+      </form>
+
+      <div class="message">
+        * Click or Drag&Drop to add view image to every kind of view.
+      </div>
+
+      <div class="result-display">
+        <div class="radar">
+          <canvas id="radar-chart" />
+        </div>
+        <div class="doughnut">
+          <canvas id="doughnut-chart" />
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+</html>
